@@ -1,18 +1,15 @@
 import React from 'react'
 import '../scss/cart.scss'
 
-const Cart= ({counter,changeCount,teaName}) => {
+const CartItem= ({counter}) => {
   
 
     return (
-        <div className="cart">
-            <h1>Shopping</h1>
+        <div>
             <h2>{counter.count}</h2>
             <h2>{counter.name}</h2>
             <h3>{counter.sum}</h3>
-            
-
         </div>
     )
 }
-export default Cart
+export default CartItem
