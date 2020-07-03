@@ -1,10 +1,31 @@
 .cart{
-    width:300px;
+    width:500px;
     height:100%;
     padding:2em;
     border:2px solid black;
 
+    p{
+        font-size: 20px;;
+    }
     button{
-        padding:2em;
+        cursor: pointer;
+        padding:1em;
+        background-color: rgb(65, 230, 44);
+        color:white;
+        border-radius: 10px;;
+
+        &:hover{
+            opacity:0.9;
+
+        }
+        
+
+    }
+}
+.item{
+    display:flex;
+    flex-flow: row wrap;
+    p{
+        padding:5px;
     }
 }
