@@ -1,15 +1,18 @@
-@import './index';
+@import "./index";
 
-header{
-    
-    color:rgb(0,0,100);
-    background-color: rgb(255,255,255);
-    font-size: 30px;
-    padding:2em;
-    -webkit-box-shadow: -3px 14px 30px -6px rgba(69, 238, 54);
-    -moz-box-shadow: -3px 14px 30px -6px rgb(69, 238, 54);
-    box-shadow: -3px 14px 30px -6px rgba(69, 238, 54);
-    display:flex;
-    justify-content: center;
-    flex-flow:row wrap;
+header {
+  color: rgb(0, 0, 100);
+  background-color: rgb(255, 255, 255);
+  font-size: 30px;
+  padding: 2em;
+  -webkit-box-shadow: -3px 14px 30px -6px rgba(69, 238, 54);
+  -moz-box-shadow: -3px 14px 30px -6px rgb(69, 238, 54);
+  box-shadow: -3px 14px 30px -6px rgba(69, 238, 54);
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  div {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }

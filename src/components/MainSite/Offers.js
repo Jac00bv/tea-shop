@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Offer from "./Offer";
 import Cart from "./Cart";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import offersStyles from "../../scss/offers.module.scss";
+import { CartContext } from "../../App";
 
 const { teas } = require("./Teas");
 
 const Offers = () => {
-  const [listItem, changeList] = useState([]);
-  const [sum, setSum] = useState(0);
+  const contextValue = useContext(CartContext);
+  console.log(contextValue);
   const purchase = () => toast.success("You added item to the cart!");
   return (
     <div>
@@ -18,17 +19,17 @@ const Offers = () => {
           <div key={i}>
             <Offer
               tea={tea}
-              listItem={listItem}
-              changeList={changeList}
+              listItem={contextValue.listItem}
+              changeList={contextValue.changeList}
               purchase={purchase}
-              sum={sum}
-              setSum={setSum}
+              sum={contextValue.sum}
+              setSum={contextValue.setSum}
             />
           </div>
         ))}
-        <ToastContainer />
+        <ToastContainer autoClose={2000} />
       </section>
-      <Cart listItem={listItem} sum={sum} />
+      <Cart listItem={contextValue.listItem} sum={contextValue.sum} />
     </div>
   );
 };
