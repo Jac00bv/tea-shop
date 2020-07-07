@@ -1,0 +1,30 @@
+.basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  padding: 3em;
+  background-color: rgb(201, 139, 167);
+  .item {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1em;
+    border: 1px solid black;
+    width: 70%;
+    p {
+      padding: 5px;
+      display: flex;
+    }
+  }
+  button {
+    cursor: pointer;
+    padding: 1em;
+    background-color: rgb(65, 230, 44);
+    color: white;
+    border-radius: 10px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

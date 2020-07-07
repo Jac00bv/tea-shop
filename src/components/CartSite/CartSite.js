@@ -6,7 +6,9 @@ const CartSite = () => {
   return (
     <>
       <Header />
-      <h1>Cart</h1>
+      <h1 style={{ textAlign: "center", color: "blue", padding: "1em" }}>
+        Cart
+      </h1>
       <ShoppingBasket />
     </>
   );

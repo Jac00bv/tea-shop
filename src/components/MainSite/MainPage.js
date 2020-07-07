@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header";
 import Offers from "./Offers";
+import Footer from "../Footer";
 
 const MainPage = () => {
+  const [cartStatus, toggle] = useState(true);
   return (
-    <div>
-      <Header />
-      <Offers />
-    </div>
+    <>
+      <Header cartStatus={cartStatus} toggle={toggle} />
+      <Offers cartStatus={cartStatus} />
+      <Footer />
+    </>
   );
 };
 

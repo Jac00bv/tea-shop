@@ -9,7 +9,7 @@ import { CartContext } from "../../App";
 
 const { teas } = require("./Teas");
 
-const Offers = () => {
+const Offers = ({ cartStatus }) => {
   const contextValue = useContext(CartContext);
   const purchase = () => toast.success("You added item to the cart!");
 
@@ -19,14 +19,16 @@ const Offers = () => {
   const searchFor = (value) => {
     let search = value.toLowerCase();
     setSearch(search);
-    console.log(searchedItem);
   };
+  const filteredTeas = teas.filter((tea) => {
+    return tea.id.indexOf(searchedItem.toLowerCase().trim()) !== -1;
+  });
 
   return (
     <div>
       <Search searchedItem={searchedItem} searchFor={searchFor} />
       <section className={offersStyles.offersSection}>
-        {teas.map((tea, i) => (
+        {filteredTeas.map((tea, i) => (
           <div key={i}>
             <Offer
               tea={tea}
@@ -35,13 +37,16 @@ const Offers = () => {
               purchase={purchase}
               sum={contextValue.sum}
               setSum={contextValue.setSum}
-              searchedItem={searchedItem}
             />
           </div>
         ))}
         <ToastContainer autoClose={2000} />
       </section>
-      <Cart listItem={contextValue.listItem} sum={contextValue.sum} />
+      <Cart
+        listItem={contextValue.listItem}
+        sum={contextValue.sum}
+        cartStatus={cartStatus}
+      />
     </div>
   );
 };
