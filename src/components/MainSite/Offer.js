@@ -1,7 +1,15 @@
 import React from "react";
 import offerStyles from "../../scss/offer.module.scss";
 
-const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
+const Offer = ({
+  tea,
+  listItem,
+  changeList,
+  purchase,
+  sum,
+  setSum,
+  searchedItem,
+}) => {
   const name = tea.name;
   const description = tea.description;
   const price = tea.price;
@@ -33,7 +41,9 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
     setSum((prevSum) => prevSum + price);
   };
 
-  return (
+  //warunek
+  return searchedItem !== "" &&
+    tea.name.toLowerCase().indexOf(searchedItem) === -1 ? null : (
     <div>
       <div className={offerStyles.offer}>
         <h1>{name}</h1>

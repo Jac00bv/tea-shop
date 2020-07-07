@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Offer from "./Offer";
 import Cart from "./Cart";
+import Search from "./Search";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import offersStyles from "../../scss/offers.module.scss";
@@ -10,10 +11,20 @@ const { teas } = require("./Teas");
 
 const Offers = () => {
   const contextValue = useContext(CartContext);
-  console.log(contextValue);
   const purchase = () => toast.success("You added item to the cart!");
+
+  //searching
+  const [searchedItem, setSearch] = useState("");
+
+  const searchFor = (value) => {
+    let search = value.toLowerCase();
+    setSearch(search);
+    console.log(searchedItem);
+  };
+
   return (
     <div>
+      <Search searchedItem={searchedItem} searchFor={searchFor} />
       <section className={offersStyles.offersSection}>
         {teas.map((tea, i) => (
           <div key={i}>
@@ -24,6 +35,7 @@ const Offers = () => {
               purchase={purchase}
               sum={contextValue.sum}
               setSum={contextValue.setSum}
+              searchedItem={searchedItem}
             />
           </div>
         ))}
