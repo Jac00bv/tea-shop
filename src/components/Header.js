@@ -1,21 +1,20 @@
 import React from "react";
 // eslint-disable-next-line
 import headerStyles from "../scss/header.module.scss";
-import logo from "../images/icon2.png";
+import logo from "../images/icon.png";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Header = ({ cartStatus, toggle }) => {
   return (
     <header>
-      {" "}
+      <div></div>
       <div>
-        <h1>Tea Shop</h1>
         <img src={logo} alt="logo" />
       </div>
       <div>
-        <button onClick={() => toggle(!cartStatus)}>
-          <FaShoppingCart color="green" size="4em" type="icon" />
-        </button>
+        <div type="button" onClick={() => toggle(!cartStatus)}>
+          <FaShoppingCart color="rgb(255, 255, 255)" size="2em" type="icon" />
+        </div>
       </div>
     </header>
   );

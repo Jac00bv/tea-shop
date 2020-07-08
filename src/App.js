@@ -4,6 +4,7 @@ import MainPage from "./components/MainSite/MainPage";
 import CartSite from "./components/CartSite/CartSite";
 import Checkout from "./components/Checkout/Checkout";
 export const CartContext = React.createContext();
+
 const App = () => {
   const [listItem, changeList] = useState([]);
   const [sum, setSum] = useState(0);

@@ -3,7 +3,7 @@ const teas = [
     id: "whitetea",
     name: "White Tea",
     price: 10,
-    description: "White tea with the taste of vanilla and coconut",
+    description: "White tea with the taste of vanilla and coconut.",
   },
   {
     id: "blacktea",
@@ -26,14 +26,14 @@ const teas = [
   {
     id: "puertea",
     name: "Puer Tea",
-    price: 17,
-    description: "A dark and rich superb Assam, India black tea.",
+    price: 18,
+    description: "Sweet, bitter, floral and slightly woody taste.",
   },
   {
     id: `darktea`,
     name: "Dark Tea",
     price: 25,
-    description: "Rare, green tea scented with jasmine flowers.",
+    description: "Deep aroma, a bit nutty and definitely bold.",
   },
   {
     id: "earlgreytea",
@@ -44,14 +44,34 @@ const teas = [
   {
     id: "matchatea",
     name: "Matcha",
-    price: 17,
-    description: "This green tea comes as a stone-ground powder",
+    price: 22,
+    description: "This green tea comes as a stone-ground powder.",
   },
   {
     id: `rooibostea`,
     name: "Rooibos Tea",
     price: 25,
-    description: "Rare, green tea scented with jasmine flowers.",
+    description:
+      "Smooth and gentle with a natural sweetness and slightly nutty taste.",
+  },
+  {
+    id: "masalatea",
+    name: "Masala Chai",
+    price: 20,
+    description: "Ginger and cardamon mixed with milk and sugar. ",
+  },
+  {
+    id: "senchatea",
+    name: "Sencha",
+    price: 40,
+    description: "The most popular Japanese tea, served as leaves.",
+  },
+  {
+    id: `herbaltea`,
+    name: "Herbal Tea",
+    price: 25,
+    description:
+      "Smooth and gentle with a natural sweetness and slightly nutty taste.",
   },
 ];
 module.exports = { teas };

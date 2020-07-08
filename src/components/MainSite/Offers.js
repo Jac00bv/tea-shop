@@ -23,7 +23,6 @@ const Offers = ({ cartStatus }) => {
   const filteredTeas = teas.filter((tea) => {
     return tea.id.indexOf(searchedItem.toLowerCase().trim()) !== -1;
   });
-
   return (
     <div>
       <Search searchedItem={searchedItem} searchFor={searchFor} />
@@ -47,6 +46,13 @@ const Offers = ({ cartStatus }) => {
         sum={contextValue.sum}
         cartStatus={cartStatus}
       />
+      {filteredTeas.length === 0 ? (
+        <div
+          style={{ textAlign: "center", padding: "5em", marginBottom: "10em" }}
+        >
+          <h1>Not in store :(</h1>
+        </div>
+      ) : null}
     </div>
   );
 };

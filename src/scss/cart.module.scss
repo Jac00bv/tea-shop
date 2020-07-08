@@ -3,12 +3,13 @@
   top: 0;
   right: -100%;
   z-index: 1;
-  background-color: rgb(109, 109, 219);
+  background-color: rgb(231, 231, 241);
   opacity: 0.9;
   width: 500px;
   height: auto;
   padding: 2em;
-  border: 2px solid black;
+  border: 1px solid black;
+  border-radius: 10px;
 
   p {
     font-size: 20px;
@@ -33,7 +34,17 @@
 .item {
   display: flex;
   flex-flow: row wrap;
+  padding: 1em;
+  border-bottom: 1px solid black;
   p {
     padding: 5px;
   }
+}
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+}
+.price {
+  text-align: center;
+  padding: 30px;
 }

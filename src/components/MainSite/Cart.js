@@ -13,7 +13,7 @@ const Cart = ({ listItem, sum, cartStatus }) => {
           <p>Price:{item.price}$</p>
         </div>
       ))}
-      <p>Sum:{sum}$</p>
+      <p className={cartStyles.price}>Sum:{sum}$</p>
       <Link to="/cart">
         <button>Go to cart</button>
       </Link>
@@ -31,13 +31,15 @@ const Cart = ({ listItem, sum, cartStatus }) => {
           <p>Price:{item.price}$</p>
         </div>
       ))}
-      <p>Sum:{sum}$</p>
-      <Link to="/cart">
-        <button>Go to cart</button>
-      </Link>
-      <Link to="/checkout">
-        <button>Checkout</button>
-      </Link>
+      <p className={cartStyles.price}>Sum:{sum}$</p>
+      <div className={cartStyles.buttonDiv}>
+        <Link to="/cart">
+          <button className={cartStyles.cartButton}>Go to cart</button>
+        </Link>
+        <Link to="/checkout">
+          <button className={cartStyles.cartButton}>Checkout</button>
+        </Link>
+      </div>
     </div>
   );
 };

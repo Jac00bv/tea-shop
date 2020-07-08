@@ -36,11 +36,17 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
   return (
     <div>
       <div className={offerStyles.offer}>
-        <h1>{name}</h1>
-        <img src={require(`../../images/${tea.id}.jpg`)} alt={tea.name} />
-        <p>{description}</p>
-        <h2>{price}$</h2>
-        <button onClick={check}>Add to cart</button>
+        <div className={offerStyles.offerTitle}>
+          <h1>{name}</h1>
+          <img src={require(`../../images/${tea.id}.jpg`)} alt={tea.name} />
+        </div>
+        <div className={offerStyles.offerText}>
+          <p>{description}</p>
+          <h2>{price}$</h2>
+        </div>
+        <button className={offerStyles.offerButton} onClick={check}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
