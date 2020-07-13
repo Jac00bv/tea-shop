@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import Offer from "./Offer";
-import Cart from "./Cart";
 import Search from "./Search";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,7 +20,12 @@ const Offers = ({ cartStatus }) => {
     setSearch(search);
   };
   const filteredTeas = teas.filter((tea) => {
-    return tea.id.indexOf(searchedItem.toLowerCase().trim()) !== -1;
+    return (
+      tea.name
+        .toLowerCase()
+        .trim()
+        .indexOf(searchedItem.toLowerCase().trim()) !== -1
+    );
   });
   return (
     <div>
@@ -39,13 +43,9 @@ const Offers = ({ cartStatus }) => {
             />
           </div>
         ))}
-        <ToastContainer autoClose={2000} />
+        <ToastContainer autoClose={2000} position="top-left" />
       </section>
-      <Cart
-        listItem={contextValue.listItem}
-        sum={contextValue.sum}
-        cartStatus={cartStatus}
-      />
+
       {filteredTeas.length === 0 ? (
         <div
           style={{ textAlign: "center", padding: "5em", marginBottom: "10em" }}

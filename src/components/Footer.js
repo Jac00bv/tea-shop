@@ -11,7 +11,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin color="white" size="4em" />
+          <FaLinkedin color="rgb(100,100,100)" size="4em" />
         </a>
       </div>
 
@@ -21,11 +21,8 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithubSquare color="white" size="4em" />
+          <FaGithubSquare color="rgb(100,100,100)" size="4em" />
         </a>
-      </div>
-      <div>
-        <h1>JW</h1>
       </div>
     </footer>
   );
