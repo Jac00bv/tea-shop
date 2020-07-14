@@ -45,6 +45,16 @@ const Header = () => {
               size="2em"
               type="icon"
             />
+            <p
+              className={headerStyles.counter}
+              style={
+                contextValue.listItem.length > 0
+                  ? { display: "block" }
+                  : { display: "none" }
+              }
+            >
+              {contextValue.listItem.length}
+            </p>
           </div>
         </div>
       </header>

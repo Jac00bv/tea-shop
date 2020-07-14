@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from "./components/MainSite/MainPage";
 import CartSite from "./components/CartSite/CartSite";
 import Checkout from "./components/Checkout/Checkout";
+import Ordered from "./components/Checkout/Ordered";
 export const CartContext = React.createContext();
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" exact component={MainPage} />
         <Route path="/cart" component={CartSite} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/ordered" component={Ordered} />
       </CartContext.Provider>
     </Router>
   );

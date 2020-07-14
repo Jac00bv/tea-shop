@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GreenButton from "../GreenButton";
 import headerStyles from "../../scss/header.module.scss";
 
 const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
@@ -34,12 +35,14 @@ const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
             </div>
           ))}
           <p className={headerStyles.price}>Sum:{sum}$</p>
-          <Link to="/cart">
-            <button className={headerStyles.forwardButton}>Go to cart</button>
-          </Link>
-          <Link to="/checkout">
-            <button className={headerStyles.forwardButton}>Checkout</button>
-          </Link>
+          <div className={headerStyles.bottomButtons}>
+            <Link to="/cart">
+              <GreenButton>Go to cart</GreenButton>
+            </Link>
+            <Link to="/checkout">
+              <GreenButton>Checkout</GreenButton>
+            </Link>
+          </div>
         </>
       ) : (
         <h1 style={{ padding: "2em", textAlign: "center" }}>

@@ -1,0 +1,64 @@
+@import "../index";
+
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orderForm {
+  position: relative;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-flow: column wrap;
+  padding: 4em;
+  padding-top: 200px;
+  width: 80%;
+  background-color: $primaryCol;
+  div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 3em 2em;
+    margin: 1em 0;
+  }
+  input {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    color: $primaryCol;
+    width: 100%;
+    height: 80%;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 25px;
+    padding: 5px 0;
+  }
+}
+input:focus ~ .back,
+input:valid ~ .back {
+  background-color: $secondaryCol;
+  height: 80%;
+  border-radius: 10px;
+  transition: 300ms;
+}
+input:focus ~ .label,
+input:valid ~ .label {
+  transform: translate3d(-10px, -60px, 0);
+  transition: 300ms;
+}
+.label {
+  position: absolute;
+
+  color: black;
+}
+.back {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: rgb(12, 12, 11);
+  width: 100%;
+}
