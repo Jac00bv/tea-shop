@@ -15,7 +15,7 @@ const ShoppingBasket = () => {
           </div>
         ))}
         <h1>{contextValue.sum}$</h1>
-        <Link to="/checkout">
+        <Link to="/tea-shop/checkout">
           <button>Go to checkout!</button>
         </Link>
       </div>

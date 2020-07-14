@@ -12,10 +12,10 @@ const App = () => {
   return (
     <Router>
       <CartContext.Provider value={{ listItem, changeList, sum, setSum }}>
-        <Route path="/" exact component={MainPage} />
-        <Route path="/cart" component={CartSite} />
-        <Route path="/checkout" component={Checkout} />
-        <Route path="/ordered" component={Ordered} />
+        <Route path="/tea-shop" exact component={MainPage} />
+        <Route path="/tea-shop/cart" component={CartSite} />
+        <Route path="/tea-shop/checkout" component={Checkout} />
+        <Route path="/tea-shop/ordered" component={Ordered} />
       </CartContext.Provider>
     </Router>
   );

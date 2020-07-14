@@ -40,7 +40,7 @@ const Form = () => {
           <span className={checkoutStyles.back}></span>
         </div>
 
-        <GreenButton type="submit" formAction="/ordered">
+        <GreenButton type="submit" formAction="/tea-shop/ordered">
           Submit
         </GreenButton>
       </form>

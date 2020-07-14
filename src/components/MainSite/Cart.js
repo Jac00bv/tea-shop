@@ -36,10 +36,10 @@ const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
           ))}
           <p className={headerStyles.price}>Sum:{sum}$</p>
           <div className={headerStyles.bottomButtons}>
-            <Link to="/cart">
+            <Link to="/tea-shop/cart">
               <GreenButton>Go to cart</GreenButton>
             </Link>
-            <Link to="/checkout">
+            <Link to="/tea-shop/checkout">
               <GreenButton>Checkout</GreenButton>
             </Link>
           </div>

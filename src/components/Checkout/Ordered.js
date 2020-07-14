@@ -10,7 +10,7 @@ const Ordered = () => {
       <Header />
       <div style={{ textAlign: "center", padding: "4em", paddingTop: "200px" }}>
         <h1>Your order has been confirmed!</h1>
-        <Link to="/">
+        <Link to="/tea-shop">
           <GreenButton>Go to the main page</GreenButton>
         </Link>
       </div>
