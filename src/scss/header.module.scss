@@ -2,12 +2,12 @@
 
 .outerHeder {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
 }
 header {
   width: 100%;
-  height: 6em;
+  height: 15vh;
   color: rgb(30, 70, 37);
   font-size: 20px;
   padding: 1em;
@@ -17,10 +17,16 @@ header {
   align-items: center;
   flex-flow: row wrap;
   transition: all 500ms;
+  z-index: 5000;
   div {
     display: flex;
     flex-flow: row wrap;
   }
+}
+.logo {
+  margin-left: 40px;
+  width: 70%;
+  height: 70%;
 }
 .iconShop {
   cursor: pointer;
@@ -43,20 +49,14 @@ header {
 //cart
 
 .cart {
-  display: none;
   position: absolute;
-  top: 7.5em;
+  top: 15vh;
   right: 0;
-
   z-index: 1;
-  background-color: rgb(231, 231, 241);
+  background-color: rgb(250, 250, 250);
   width: 500px;
-  height: auto;
-  max-height: 85vh;
+  height: 85vh;
   padding: 2em;
-  border: 1px solid black;
-  overflow: auto;
-  opacity: 1;
 
   p {
     font-size: 20px;
@@ -73,14 +73,73 @@ header {
     opacity: 0.9;
   }
 }
+.items {
+  overflow: auto;
+  height: 55vh;
+}
+.item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1em;
+  border-bottom: 1px solid black;
+
+  p {
+    padding: 5px;
+  }
+}
+.middleDiv {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+.thirdDiv {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.operationButton {
+  cursor: pointer;
+  background-color: rgb(30, 70, 37);
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 50px;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+}
+.bottomCart {
+  position: absolute;
+  bottom: 0;
+  p {
+    text-align: center;
+    padding: 30px;
+  }
+  div {
+    padding: 1em;
+  }
+}
+
 .deleteButton {
+  position: absolute;
+  top: 0;
+  right: 5px;
   cursor: pointer;
   background-color: rgb(255, 0, 0);
   color: black;
+  font-size: 20px;
   font-weight: bolder;
-  padding: 1em 2em;
-  border-radius: 10px;
+  border-radius: 30px;
+  padding: 3px 10px;
   outline: none;
+  border: none;
 
   &:hover {
     opacity: 0.95;
@@ -89,32 +148,26 @@ header {
   }
 }
 
-.item {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 1em;
-  border-bottom: 1px solid black;
-  p {
-    padding: 5px;
-  }
-}
-.buttonDiv {
-  display: flex;
-  justify-content: center;
-}
-.price {
-  text-align: center;
-  padding: 30px;
-}
-
 @media (max-width: 1000px) {
-  .cart {
-    width: 100vw;
-    height: 84vh;
+  .outerHeder {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    header {
+      height: 15vh;
+    }
   }
-  .bottomButtons {
+  .cart {
     position: absolute;
-    bottom: 10px;
+    top: 15vh;
+    right: 0;
+    z-index: 2;
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    height: 85vh;
+    overflow: auto;
+    transform: translateY(-100vh);
+    transition: 500ms;
   }
 }
 

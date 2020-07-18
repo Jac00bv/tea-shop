@@ -11,19 +11,19 @@
   &:hover {
     transform: scale(1.05);
     background-color: rgb(245, 240, 240);
-    transition: ease-in 0.3s;
+    transition: ease-in 300ms;
 
     .offerTitle {
       transform: translateY(-1px);
     }
     .offerText {
       transform: translateY(-80px);
-      transition: ease-in 0.3s;
+      transition: ease-in 300ms;
       visibility: visible;
     }
     .offerButton {
       transform: translateY(-80px);
-      transition: ease-in 0.6s;
+      transition: ease-in 450ms;
       visibility: visible;
     }
   }
@@ -34,6 +34,7 @@
   }
   .offerButton {
     cursor: pointer;
+    font-weight: bolder;
     padding: 1em;
     background-color: rgb(65, 230, 44);
     color: white;
@@ -41,10 +42,13 @@
     outline: none;
     transform: translateY(100px);
     visibility: hidden;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 300ms;
 
     &:hover {
       opacity: 0.9;
+      background-color: white;
+      color: rgb(65, 230, 44);
+      transition: 300ms;
     }
   }
   p {
@@ -54,12 +58,12 @@
 }
 .offerTitle {
   transform: translateY(80px);
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 300ms;
 }
 .offerText {
   transform: translateY(100px);
   visibility: hidden;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 300ms;
 }
 
 @media (max-width: 500px) {

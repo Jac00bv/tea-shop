@@ -31,7 +31,6 @@
     height: 80%;
     background-color: transparent;
     border: none;
-    width: 100%;
     outline: none;
     font-size: 25px;
     padding: 5px 0;
@@ -61,4 +60,15 @@ input:valid ~ .label {
   height: 3px;
   background-color: rgb(12, 12, 11);
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .orderForm {
+    padding: 1em;
+    padding-top: 10em;
+    width: 90%;
+    input {
+      font-size: 20px;
+    }
+  }
 }

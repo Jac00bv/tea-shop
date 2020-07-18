@@ -31,8 +31,8 @@ const Header = () => {
       >
         <div></div>
         <div>
-          <Link to="/">
-            <img src={logo} alt="logo" />
+          <Link to="/tea-shop">
+            <img src={logo} alt="logo" className={headerStyles.logo} />
           </Link>
         </div>
         <div>

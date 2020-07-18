@@ -18,9 +18,10 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
       ...listItem,
       {
         id: listItem.length,
+        image: tea.id,
         count: 1,
-        name: name,
-        price: price,
+        name,
+        price,
       },
     ]);
     setSum((prevSum) => prevSum + price);

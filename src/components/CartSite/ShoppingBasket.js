@@ -9,9 +9,22 @@ const ShoppingBasket = () => {
       <div className={shoppingStyles.basket}>
         {contextValue.listItem.map((item, i) => (
           <div key={i} className={shoppingStyles.item}>
-            <p>{item.count}</p>
-            <p>{item.name}</p>
-            <p>Price:{item.price}$</p>
+            <div>
+              <img
+                style={{ width: "80%", height: "80%" }}
+                src={require(`../../images/${item.image}.jpg`)}
+                alt={item.image}
+              />
+              <p className={shoppingStyles.quantity}>{item.count}</p>
+            </div>
+            <div>
+              {" "}
+              <p>{item.name}</p>
+            </div>
+
+            <div>
+              <p>{item.price}$</p>
+            </div>
           </div>
         ))}
         <h1>{contextValue.sum}$</h1>

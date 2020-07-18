@@ -6,7 +6,7 @@ const Form = () => {
   return (
     <div className={checkoutStyles.outer}>
       <form className={checkoutStyles.orderForm}>
-        <h1>Confirm your order!</h1>
+        <h1 style={{ textAlign: "center" }}>Confirm your order!</h1>
 
         <div>
           <input type="text" required="required" />

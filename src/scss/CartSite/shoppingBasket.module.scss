@@ -8,17 +8,7 @@
   flex-flow: column wrap;
   padding: 3em;
   background-color: rgb(231, 238, 230);
-  .item {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 1em;
-    border: 1px solid white;
-    width: 70%;
-    p {
-      padding: 5px;
-      display: flex;
-    }
-  }
+
   button {
     cursor: pointer;
     padding: 1em;
@@ -29,5 +19,42 @@
     &:hover {
       opacity: 0.9;
     }
+  }
+}
+.item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgb(30, 70, 37);
+  background-color: white;
+  div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.quantity {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  padding: 3px 8px;
+  border-radius: 30px;
+  background-color: rgb(30, 70, 37);
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .basketOuter {
+    padding: 0;
+  }
+  .quantity {
+    top: 5%;
+    right: 10%;
+    padding: 1px 5px;
+    border-radius: 30px;
+    background-color: rgb(30, 70, 37);
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
   }
 }

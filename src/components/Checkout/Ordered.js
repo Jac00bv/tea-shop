@@ -8,7 +8,13 @@ const Ordered = () => {
   return (
     <>
       <Header />
-      <div style={{ textAlign: "center", padding: "4em", paddingTop: "200px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          paddingBottom: "10em",
+          paddingTop: "20em",
+        }}
+      >
         <h1>Your order has been confirmed!</h1>
         <Link to="/tea-shop">
           <GreenButton>Go to the main page</GreenButton>
