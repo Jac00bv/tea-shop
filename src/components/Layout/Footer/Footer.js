@@ -1,5 +1,5 @@
 import React from "react";
-import footerStyles from "../scss/Footer/footer.module.scss";
+import footerStyles from "./footer.module.scss";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div>
         <a
-          href="https://github.com/Jac00bv"
+          href="https://github.com/jacobwojcik"
           target="_blank"
           rel="noopener noreferrer"
         >

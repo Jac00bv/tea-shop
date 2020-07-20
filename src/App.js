@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from "./components/MainSite/MainPage";
 import CartSite from "./components/CartSite/CartSite";
-import Checkout from "./components/Checkout/Checkout";
+import Checkout from "./components/Checkout/Form/Form";
 import Ordered from "./components/Checkout/Ordered";
+
 export const CartContext = React.createContext();
 
 const App = () => {
   const [listItem, changeList] = useState([]);
   const [sum, setSum] = useState(0);
+
   return (
     <Router>
       <CartContext.Provider value={{ listItem, changeList, sum, setSum }}>
-        <Route path="/tea-shop" exact component={MainPage} />
-        <Route path="/tea-shop/cart" component={CartSite} />
-        <Route path="/tea-shop/checkout" component={Checkout} />
-        <Route path="/tea-shop/ordered" component={Ordered} />
+        <Route path="/" exact component={MainPage} />
+        <Route path="/cart" component={CartSite} />
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/ordered" component={Ordered} />
       </CartContext.Provider>
     </Router>
   );

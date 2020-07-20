@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "../Header";
-import Offers from "./Offers";
-import Footer from "../Footer";
+import Offers from "./Offers/Offers";
+import Layout from "../Layout/Layout";
 
 const MainPage = () => {
   return (
     <>
-      <Header />
-      <Offers />
-      <Footer />
+      <Layout>
+        <Offers />
+      </Layout>
     </>
   );
 };

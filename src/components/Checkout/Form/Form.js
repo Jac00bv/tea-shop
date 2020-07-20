@@ -1,6 +1,6 @@
 import React from "react";
-import GreenButton from "../GreenButton";
-import checkoutStyles from "../../scss/Checkout/form.module.scss";
+import GreenButton from "../../GreenButton/GreenButton";
+import checkoutStyles from "./form.module.scss";
 
 const Form = () => {
   return (
@@ -40,7 +40,7 @@ const Form = () => {
           <span className={checkoutStyles.back}></span>
         </div>
 
-        <GreenButton type="submit" formAction="/tea-shop/ordered">
+        <GreenButton type="submit" formAction="/ordered">
           Submit
         </GreenButton>
       </form>

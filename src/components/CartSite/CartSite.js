@@ -1,16 +1,15 @@
 import React from "react";
-import Header from "../Header";
-import ShoppingBasket from "./ShoppingBasket";
+import ShoppingBasket from "./ShoppingBasket/ShoppingBasket";
+import Layout from "../Layout/Layout";
 
 const CartSite = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <h1 style={{ textAlign: "center", color: "blue", padding: "1em" }}>
         Cart
       </h1>
       <ShoppingBasket />
-    </>
+    </Layout>
   );
 };
 

@@ -1,8 +1,7 @@
 import React from "react";
-import buttonStyles from "../scss/header.module.scss";
+import buttonStyles from "../Layout/Header/header.module.scss";
 
 const GreenButton = (props) => {
-  console.log(props);
   return (
     <button
       type={props.type}

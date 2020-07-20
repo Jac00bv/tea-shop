@@ -1,15 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
-import { CartContext } from "../App";
+import { CartContext } from "../../../App";
 // eslint-disable-next-line
-import headerStyles from "../scss/header.module.scss";
-import logo from "../images/icon.png";
+import headerStyles from "./header.module.scss";
+import logo from "../../../images/icon.png";
 import { FaShoppingCart } from "react-icons/fa";
-import Cart from "./MainSite/Cart";
+import Cart from "../../MainSite/Cart/Cart";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [cartStatus, toggle] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(true);
+
   const contextValue = useContext(CartContext);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const Header = () => {
       >
         <div></div>
         <div>
-          <Link to="/tea-shop">
+          <Link to="/">
             <img src={logo} alt="logo" className={headerStyles.logo} />
           </Link>
         </div>
@@ -58,6 +59,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+
       <Cart
         listItem={contextValue.listItem}
         changeList={contextValue.changeList}

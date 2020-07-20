@@ -1,7 +1,7 @@
 import React from "react";
-import offerStyles from "../../scss/offer.module.scss";
+import offerStyles from "./offer.module.scss";
 
-const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
+const Offer = ({ tea, listItem, changeList, purchase, setSum }) => {
   const name = tea.name;
   const description = tea.description;
   const price = tea.price;
@@ -39,7 +39,11 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
       <div className={offerStyles.offer}>
         <div className={offerStyles.offerTitle}>
           <h1>{name}</h1>
-          <img src={require(`../../images/${tea.id}.jpg`)} alt={tea.name} />
+
+          <img
+            src={require(`../../../../images/${tea.id}.jpg`)}
+            alt={tea.name}
+          />
         </div>
         <div className={offerStyles.offerText}>
           <p>{description}</p>

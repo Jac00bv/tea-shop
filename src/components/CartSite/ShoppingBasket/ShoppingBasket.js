@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../App";
-import shoppingStyles from "../../scss/CartSite/shoppingBasket.module.scss";
+import { CartContext } from "../../../App";
+import shoppingStyles from "./shoppingBasket.module.scss";
 const ShoppingBasket = () => {
   const contextValue = useContext(CartContext);
   return (
@@ -12,7 +12,7 @@ const ShoppingBasket = () => {
             <div>
               <img
                 style={{ width: "80%", height: "80%" }}
-                src={require(`../../images/${item.image}.jpg`)}
+                src={require(`../../../images/${item.image}.jpg`)}
                 alt={item.image}
               />
               <p className={shoppingStyles.quantity}>{item.count}</p>
@@ -28,7 +28,7 @@ const ShoppingBasket = () => {
           </div>
         ))}
         <h1>{contextValue.sum}$</h1>
-        <Link to="/tea-shop/checkout">
+        <Link to="/checkout">
           <button>Go to checkout!</button>
         </Link>
       </div>
