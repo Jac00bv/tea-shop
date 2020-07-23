@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import offerStyles from "./offer.module.scss";
 
-const Offer = ({ tea, listItem, changeList, purchase, setSum }) => {
+const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
   const name = tea.name;
   const description = tea.description;
   const price = tea.price;
-  const check = () => {
+
+  //sessionStorage for storage items in the cart during the session
+  useEffect(() => {
+    sessionStorage.setItem("itemsInTheCart", JSON.stringify(listItem));
+  }, [listItem]);
+  useEffect(() => {
+    sessionStorage.setItem("sumInTheCart", JSON.stringify(sum));
+  }, [sum]);
+
+  //adding item to the cart
+  const check = (e) => {
+    e.target.disabled = true;
+    e.target.style.background = "black";
+    e.target.innerHTML = "Item is in the cart";
     purchase();
     let index = listItem.findIndex((item) => {
       return item.name === name;
     });
-    index !== -1 ? addExistingItem(index) : addItem();
+    index !== -1 ? addExistingItem(index) : addItem(e);
   };
 
-  const addItem = () => {
+  const addItem = (e) => {
     changeList([
       ...listItem,
       {

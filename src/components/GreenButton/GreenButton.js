@@ -5,6 +5,7 @@ const GreenButton = (props) => {
   return (
     <button
       type={props.type}
+      onClick={props.action}
       formAction={props.formAction}
       className={buttonStyles.greenButton}
     >

@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from "./components/MainSite/MainPage";
 import CartSite from "./components/CartSite/CartSite";
-import Checkout from "./components/Checkout/Form/Form";
+import Checkout from "./components/Checkout/Checkout";
 import Ordered from "./components/Checkout/Ordered";
 
 export const CartContext = React.createContext();
 
 const App = () => {
-  const [listItem, changeList] = useState([]);
-  const [sum, setSum] = useState(0);
+  const [listItem, changeList] = useState(
+    JSON.parse(sessionStorage.getItem("itemsInTheCart")) || []
+  );
+  const [sum, setSum] = useState(
+    JSON.parse(sessionStorage.getItem("sumInTheCart")) || 0
+  );
 
   return (
     <Router>

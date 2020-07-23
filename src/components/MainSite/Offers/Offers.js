@@ -39,6 +39,7 @@ const Offers = ({ cartStatus }) => {
               listItem={contextValue.listItem}
               changeList={contextValue.changeList}
               purchase={purchase}
+              sum={contextValue.sum}
               setSum={contextValue.setSum}
             />
           </div>

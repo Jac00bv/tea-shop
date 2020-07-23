@@ -7,6 +7,7 @@ const ShoppingBasket = () => {
   return (
     <div className={shoppingStyles.basketOuter}>
       <div className={shoppingStyles.basket}>
+        <h1 styles={{ padding: "1em" }}>Your cart</h1>
         {contextValue.listItem.map((item, i) => (
           <div key={i} className={shoppingStyles.item}>
             <div>
@@ -27,9 +28,9 @@ const ShoppingBasket = () => {
             </div>
           </div>
         ))}
-        <h1>{contextValue.sum}$</h1>
+        <h1 styles={{ padding: "1em" }}>{contextValue.sum}$</h1>
         <Link to="/checkout">
-          <button>Go to checkout!</button>
+          <button styles={{ padding: "1em" }}>Go to checkout!</button>
         </Link>
       </div>
     </div>

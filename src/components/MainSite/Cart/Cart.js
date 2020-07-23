@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import GreenButton from "../../GreenButton/GreenButton";
 import headerStyles from "../../Layout/Header/header.module.scss";
 
 const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
+  useEffect(() => {
+    sessionStorage.setItem("itemsInTheCart", JSON.stringify(listItem));
+  }, [listItem]);
+  useEffect(() => {
+    sessionStorage.setItem("sumInTheCart", JSON.stringify(sum));
+  }, [sum]);
+
   const deleteItem = (e) => {
     const itemToDelete = e.target.getAttribute("name");
     const cost = e.target.getAttribute("cost");

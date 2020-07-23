@@ -10,6 +10,11 @@ const Search = ({ searchItem, searchFor }) => {
           placeholder="Search for your favorite tea"
           value={searchItem}
           onChange={(e) => searchFor(e.target.value)}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              e.target.blur();
+            }
+          }}
         />
       </form>
     </>
