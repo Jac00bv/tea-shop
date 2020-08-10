@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import history from "./assets/history";
 import MainPage from "./components/MainSite/MainPage";
 import CartSite from "./components/CartSite/CartSite";
 import Checkout from "./components/Checkout/Checkout";
@@ -16,7 +17,7 @@ const App = () => {
   );
 
   return (
-    <Router>
+    <Router history={history}>
       <CartContext.Provider value={{ listItem, changeList, sum, setSum }}>
         <Route path="/" exact component={MainPage} />
         <Route path="/cart" component={CartSite} />

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import GreenButton from "../../GreenButton/GreenButton";
+import { FaTimes, FaPlus, FaMinus } from "react-icons/fa";
 import headerStyles from "../../Layout/Header/header.module.scss";
 
 const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
@@ -76,7 +77,7 @@ const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
                       cost={item.price}
                       onClick={subtractItem}
                     >
-                      -
+                      <FaMinus color="white" />
                     </button>
                     <p>{item.count}</p>
                     <button
@@ -85,7 +86,7 @@ const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
                       cost={item.price}
                       onClick={addItem}
                     >
-                      +
+                      <FaPlus color="white" />
                     </button>
                   </span>
                 </div>
@@ -97,21 +98,27 @@ const Cart = ({ listItem, changeList, sum, setSum, cartStatus }) => {
                     cost={item.price}
                     onClick={deleteItem}
                   >
-                    X
+                    <FaTimes color="white" />
                   </button>
                 </div>
               </div>
             ))}
           </div>
           <div className={headerStyles.bottomCart}>
-            <p className={headerStyles.price}>Sum:{sum}$</p>
+            <h3 className={headerStyles.price}>Sum:{sum}$</h3>
             <div>
-              <Link to="/cart">
-                <GreenButton>Go to cart</GreenButton>
-              </Link>
-              <Link to="/checkout">
-                <GreenButton>Checkout</GreenButton>
-              </Link>
+              <div>
+                <Link to="/cart">
+                  <GreenButton>Go to cart</GreenButton>
+                </Link>
+              </div>
+              <div>
+                <Link to="/checkout">
+                  <GreenButton className={headerStyles.bottomButtons}>
+                    Checkout
+                  </GreenButton>
+                </Link>
+              </div>
             </div>
           </div>
         </>

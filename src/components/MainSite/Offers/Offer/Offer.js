@@ -15,18 +15,12 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
   }, [sum]);
 
   //adding item to the cart
-  const check = (e) => {
-    e.target.disabled = true;
-    e.target.style.background = "black";
-    e.target.innerHTML = "Item is in the cart";
-    purchase();
-    let index = listItem.findIndex((item) => {
-      return item.name === name;
-    });
-    index !== -1 ? addExistingItem(index) : addItem(e);
-  };
 
   const addItem = (e) => {
+    e.target.disabled = true;
+    e.target.style.background = "black";
+    e.target.innerHTML = "In the cart";
+    purchase();
     changeList([
       ...listItem,
       {
@@ -37,13 +31,6 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
         price,
       },
     ]);
-    setSum((prevSum) => prevSum + price);
-  };
-  const addExistingItem = (index) => {
-    let newArr = [...listItem];
-    newArr[index].count = newArr[index].count + 1;
-    newArr[index].price = newArr[index].price + price;
-    changeList(newArr);
     setSum((prevSum) => prevSum + price);
   };
 
@@ -62,7 +49,7 @@ const Offer = ({ tea, listItem, changeList, purchase, sum, setSum }) => {
           <p>{description}</p>
           <h2>{price}$</h2>
         </div>
-        <button className={offerStyles.offerButton} onClick={check}>
+        <button className={offerStyles.offerButton} onClick={addItem}>
           Add to cart
         </button>
       </div>

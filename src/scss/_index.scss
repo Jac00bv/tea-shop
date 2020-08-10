@@ -16,3 +16,7 @@ body {
 
 $primaryCol: rgb(231, 238, 230);
 $secondaryCol: rgb(100, 100, 100);
+
+svg {
+  pointer-events: none;
+}

@@ -45,12 +45,11 @@
     transition: ease-in-out 300ms;
 
     &:hover {
-      opacity: 0.9;
-      background-color: white;
-      color: rgb(65, 230, 44);
+      opacity: 0.8;
       transition: 300ms;
     }
   }
+
   p {
     font-size: 20px;
     padding: 1em;

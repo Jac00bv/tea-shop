@@ -1,15 +1,12 @@
 import React from "react";
+import history from "../../../assets/history";
 import GreenButton from "../../GreenButton/GreenButton";
 import checkoutStyles from "./form.module.scss";
 
 const Form = () => {
   return (
     <div className={checkoutStyles.outer}>
-      <form
-        className={checkoutStyles.orderForm}
-        action="/ordered"
-        onSubmit={() => sessionStorage.clear()}
-      >
+      <form className={checkoutStyles.orderForm}>
         <h1 style={{ textAlign: "center" }}>Confirm your order!</h1>
 
         <div>
@@ -45,8 +42,11 @@ const Form = () => {
         </div>
 
         <GreenButton
+          action={() => {
+            sessionStorage.clear();
+            history.push("/ordered");
+          }}
           type="submit"
-          // action={sessionStorage.clear()}
         >
           Submit
         </GreenButton>
